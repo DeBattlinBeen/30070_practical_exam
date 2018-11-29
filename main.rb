@@ -23,31 +23,29 @@ puts bus_stops.to_s
 # Part 2
 puts "\nPart II\n====="
 
-routes = Routes.new
+bus_routes = Routes.new
 begin
   IO.foreach("routes.txt") do |line|
     data = line.split
     route = Route.new(data[0].to_i)
-    stop_index = data.size-1
+    stop_index = data.size - 1
     while stop_index > 0
-      route.add_bus_stop(bus_stops.bus_stop(data[data.size-stop_index].to_i))
+      route.add_bus_stop(bus_stops.bus_stop(data[data.size - stop_index].to_i))
       stop_index -= 1
     end
 
-    routes.add_route(route)
+    bus_routes.add_route(route)
   end
 end
-
-puts routes.to_s
-
+puts bus_routes.to_s
 
 # Part 3
 puts "\nPart III\n====="
-routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
+bus_routes.each {|r| puts "Length of route \##{r.id}: #{bus_routes.length(r.id)}"}
 
 # Part 4
 puts "\nPart IV\n====="
-path_finder = PathFinder.new(bus_stops,routes)
+path_finder = PathFinder.new(bus_stops, bus_routes)
 puts "#{path_finder.find_all_paths(bus_stops.bus_stop(1))}\n"
 puts "#{path_finder.find_all_paths(bus_stops.bus_stop(3))}\n"
 puts "#{path_finder.find_all_paths(bus_stops.bus_stop(5))}\n"

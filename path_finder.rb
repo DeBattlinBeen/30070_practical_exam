@@ -17,20 +17,21 @@ class PathFinder
     str
   end
 
-  def create_path(paths, index, stop)
-    next_stops = @bus_routes.find_next_stops(stop)
+  ## Recursive Function to create paths
+  def create_path(paths, index, current_stop)
+    next_stops = @bus_routes.find_next_stops(current_stop)
 
     unless next_stops.size == 0
       path = Array.new(paths[index])
-      next_stops.each do |s|
-        if s == next_stops[0]
-          paths[index] << s.id
-          create_path(paths, index, s)
+      next_stops.each do |next_stop|
+        if next_stop == next_stops[0]
+          paths[index] << next_stop.id
+          create_path(paths, index, next_stop)
         else
           path_1 = Array.new(path)
-          path_1 << s.id
+          path_1 << next_stop.id
           paths << path_1
-          create_path(paths, paths.size-1, s)
+          create_path(paths, paths.size-1, next_stop)
         end
       end
     end
