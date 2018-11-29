@@ -2,7 +2,7 @@ require_relative 'point.rb'
 
 class BusStop
   include Comparable
-  attr_reader :name, :id
+  attr_reader :name, :id, :point
 
   def <=>(other)
     @name <=> other.name

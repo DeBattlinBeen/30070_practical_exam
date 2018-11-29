@@ -1,6 +1,9 @@
 require_relative 'bus_stop.rb'
+require_relative 'point.rb'
 
 class Route
+  attr_reader :id
+
   def initialize(id)
     @id = id
     @bus_stops = []
@@ -8,6 +11,14 @@ class Route
 
   def add_bus_stop(bus_stop)
     @bus_stops << bus_stop
+  end
+
+  def each_line_segment
+    i = 0
+    (@bus_stops.size-1).times do
+      yield @bus_stops[i].point.line_segment(@bus_stops[i+1].point)
+      i += 1
+    end
   end
 
   def to_s

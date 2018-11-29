@@ -42,6 +42,7 @@ puts routes.to_s
 
 # Part 3
 puts "\nPart 3:"
+routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
 
 
 # Part 4
