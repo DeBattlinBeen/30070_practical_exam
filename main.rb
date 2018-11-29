@@ -14,6 +14,7 @@ begin
   end rescue abort "Couldn't read 'stops.txt'"
 end
 
+bus_stops.sort_by_name!
 puts bus_stops.to_s
 
 # Part 2

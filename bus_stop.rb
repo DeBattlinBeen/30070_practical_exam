@@ -1,6 +1,13 @@
 require_relative 'point.rb'
 
 class BusStop
+  include Comparable
+  attr_reader :name
+
+  def <=>(other)
+    @name <=> other.name
+  end
+
   def initialize(name, id, point)
     @id = id
     @name = name

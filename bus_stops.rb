@@ -9,6 +9,10 @@ class BusStops
     @bus_stops << bus_stop
   end
 
+  def sort_by_name!
+    @bus_stops.sort! {|a,b| a.<=>(b)}
+  end
+
   def to_s
     str = ""
     @bus_stops.each {|s| str += "#{s}\n"}
