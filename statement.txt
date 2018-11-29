@@ -2,3 +2,6 @@ Name: Conor Beenham
 Student #: 16350851
 
 All parts working.
+
+PathFinder.find_all_paths returns a string, instead of an array of paths. Unsure what to return, but prints same
+output.
