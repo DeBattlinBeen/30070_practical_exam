@@ -3,6 +3,7 @@ require_relative 'bus_stop.rb'
 require_relative 'point.rb'
 require_relative 'route.rb'
 require_relative 'routes.rb'
+require_relative 'path_finder.rb'
 
 # Part 1
 puts "\nPart 1:"
@@ -46,5 +47,5 @@ routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
 
 # Part 4
 puts "\nPart 4:"
-
-next_stops = routes.find_next_stops(2)
+path_finder = PathFinder.new(routes)
+path_finder.find_all_paths(1)
