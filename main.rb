@@ -27,11 +27,17 @@ begin
   IO.foreach("routes.txt") do |line|
     data = line.split
     route = Route.new(data[0].to_i)
+    stop_index = data.size-1
+    while stop_index > 0
+      route.add_bus_stop(bus_stops.bus_stop(data[data.size-stop_index].to_i))
+      stop_index -= 1
+    end
 
     routes.add_route(route)
-
   end
 end
+
+puts routes.to_s
 
 
 # Part 3

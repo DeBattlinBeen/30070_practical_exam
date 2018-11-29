@@ -12,7 +12,14 @@ class Route
 
   def to_s
     str = "Route \##{@id}: "
-    @bus_stops.each {|s| str += "#{s.name}, "}
+    i = 0
+    (@bus_stops.size).times do
+      str += "#{@bus_stops[i].name}"
+      if i < @bus_stops.size-1
+        str += ", "
+      end
+      i += 1
+    end
     str
   end
 end
