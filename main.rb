@@ -47,7 +47,7 @@ routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
 
 # Part 4
 puts "\nPart IV\n====="
-path_finder = PathFinder.new(routes)
-puts "#{path_finder.find_all_paths(1)}\n"
-puts "#{path_finder.find_all_paths(3)}\n"
-puts "#{path_finder.find_all_paths(5)}\n"
+path_finder = PathFinder.new(bus_stops,routes)
+puts "#{path_finder.find_all_paths(bus_stops.bus_stop(1))}\n"
+puts "#{path_finder.find_all_paths(bus_stops.bus_stop(3))}\n"
+puts "#{path_finder.find_all_paths(bus_stops.bus_stop(5))}\n"

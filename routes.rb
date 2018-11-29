@@ -23,13 +23,13 @@ class Routes
     sum.round(2)
   end
 
-  def find_next_stops(stop_id)
+  def find_next_stops(stop)
     next_stops = []
     each do |r|
       r.each_stop do |s, index|
-        if s.id == stop_id
+        if s.id == stop.id
           unless r.stop(index + 1).nil?
-            next_stops << r.stop(index + 1).id
+            next_stops << r.stop(index + 1)
           end
         end
       end
