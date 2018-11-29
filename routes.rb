@@ -16,8 +16,7 @@ class Routes
   def length(route_id)
     sum = 0.0
     route = @routes[0]
-    each {|r| route = @routes[0] if r.id == route_id}
-
+    each {|r| route = r if r.id == route_id}
     route.each_line_segment {|len| sum += len}
     sum.round(2)
   end
