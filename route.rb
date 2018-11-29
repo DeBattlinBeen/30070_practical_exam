@@ -13,6 +13,14 @@ class Route
     @bus_stops << bus_stop
   end
 
+  def stop(index)
+    @bus_stops[index]
+  end
+
+  def each_stop
+    @bus_stops.each_with_index {|stop, index| yield stop, index}
+  end
+
   def each_line_segment
     i = 0
     (@bus_stops.size-1).times do

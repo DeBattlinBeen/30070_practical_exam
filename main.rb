@@ -16,7 +16,7 @@ begin
   end rescue abort "Couldn't read 'stops.txt'"
 end
 
-bus_stops.sort_by_name!
+#bus_stops.sort_by_name!
 puts bus_stops.to_s
 
 # Part 2
@@ -46,3 +46,5 @@ routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
 
 # Part 4
 puts "\nPart 4:"
+
+next_stops = routes.find_next_stops(2)
