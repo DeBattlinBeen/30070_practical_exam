@@ -1,6 +1,8 @@
 require_relative 'bus_stops.rb'
 require_relative 'bus_stop.rb'
 require_relative 'point.rb'
+require_relative 'route.rb'
+require_relative 'routes.rb'
 
 # Part 1
 puts "\nPart 1:"
@@ -19,6 +21,17 @@ puts bus_stops.to_s
 
 # Part 2
 puts "\nPart 2:"
+
+routes = Routes.new
+begin
+  IO.foreach("routes.txt") do |line|
+    data = line.split
+    route = Route.new(data[0].to_i)
+
+    routes.add_route(route)
+
+  end
+end
 
 
 # Part 3
