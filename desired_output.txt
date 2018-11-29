@@ -1,0 +1,39 @@
+Part I
+======
+Bus stop #3: "jos" located at (3.5,3.5)
+Bus stop #5: "nis" located at (1.0,1.0)
+Bus stop #7: "ome" located at (3.5,4.0)
+Bus stop #6: "ota" located at (2.0,2.5)
+Bus stop #2: "qom" located at (2.5,2.0)
+Bus stop #8: "ube" located at (6.0,5.0)
+Bus stop #1: "ufa" located at (-1.0,1.0)
+Bus stop #4: "yao" located at (7.5,7.0)
+
+Part II
+=======
+Route #35: ufa, qom, jos, yao
+Route #47: nis, ota, ome, ube
+Route #83: nis, qom, ome, yao
+
+Part III
+========
+Length of route #35: 10.76
+Length of route #47: 6.62
+Length of route #83: 9.04
+
+Part IV
+=======
+All paths starting from stop 1
+[1, 2, 3, 4]
+[1, 2, 7, 8]
+[1, 2, 7, 4]
+
+All paths starting from stop 3
+[3, 4]
+
+All paths starting from stop 5
+[5, 6, 7, 8]
+[5, 2, 3, 4]
+[5, 2, 7, 8]
+[5, 2, 7, 4]
+[5, 6, 7, 4]
