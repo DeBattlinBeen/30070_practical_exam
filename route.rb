@@ -33,7 +33,7 @@ class Route
     str = "Route \##{@id}: "
     i = 0
     (@bus_stops.size).times do
-      str += "#{@bus_stops[i].name}"
+      str += "#{@bus_stops[i].name} (#{@bus_stops[i].id})"
       if i < @bus_stops.size-1
         str += ", "
       end

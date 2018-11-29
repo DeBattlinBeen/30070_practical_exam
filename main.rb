@@ -6,7 +6,7 @@ require_relative 'routes.rb'
 require_relative 'path_finder.rb'
 
 # Part 1
-puts "\nPart 1:"
+puts "\nPart I\n====="
 
 bus_stops = BusStops.new
 begin
@@ -21,7 +21,7 @@ end
 puts bus_stops.to_s
 
 # Part 2
-puts "\nPart 2:"
+puts "\nPart II\n====="
 
 routes = Routes.new
 begin
@@ -42,10 +42,12 @@ puts routes.to_s
 
 
 # Part 3
-puts "\nPart 3:"
+puts "\nPart III\n====="
 routes.each {|r| puts "Length of route \##{r.id}: #{routes.length(r.id)}"}
 
 # Part 4
-puts "\nPart 4:"
+puts "\nPart IV\n====="
 path_finder = PathFinder.new(routes)
-path_finder.find_all_paths(1)
+puts "#{path_finder.find_all_paths(1)}\n"
+puts "#{path_finder.find_all_paths(3)}\n"
+puts "#{path_finder.find_all_paths(5)}\n"

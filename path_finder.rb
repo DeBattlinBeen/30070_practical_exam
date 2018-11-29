@@ -11,9 +11,13 @@ class PathFinder
       new_path = [stop_id,s]
       paths[index] = new_path
       create_path(paths,index,s)
-      index += 1
+      index = paths.size
     end
-    puts paths.to_s
+    str = "All paths starting from stop #{stop_id}\n"
+    paths.each do |path|
+      str += "#{path.to_s}\n"
+    end
+    str
   end
 
   def create_path(paths, index, stop_id)
@@ -37,6 +41,7 @@ class PathFinder
           i += 1
         end
       end
+      paths
     end
   end
 end
